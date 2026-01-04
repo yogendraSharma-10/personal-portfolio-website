@@ -1,0 +1,35 @@
+```json
+{
+  "name": "personal-portfolio-website",
+  "version": "1.0.0",
+  "description": "A professional, responsive portfolio site showcasing projects and skills, featuring a contact form powered by a simple backend API. This project is designed to be part of a larger interconnected system, potentially interacting with services like a Collaborative Task Management System, Real-time Collaborative Whiteboard, Micro Social Media Dashboard, and a Multi-vendor E-commerce Marketplace. It serves as a personal hub, with potential future integrations to display activity or projects from these other platforms.",
+  "main": "server/index.js",
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=18.x",
+    "npm": ">=9.x"
+  },
+  "scripts": {
+    "install-all": "echo 'Installing root dependencies...' && npm install && echo 'Installing client dependencies...' && npm install --prefix client && echo 'Installing server dependencies...' && npm install --prefix server && echo 'All dependencies installed.'",
+    "client": "echo 'Starting React client development server...' && npm start --prefix client",
+    "server": "echo 'Starting Node.js backend development server...' && npm run dev --prefix server",
+    "dev": "echo 'Starting both client and server in development mode...' && concurrently \"npm run server\" \"npm run client\"",
+    "build": "echo 'Building React client for production...' && npm run build --prefix client",
+    "start": "echo 'Starting production server (assumes client build is complete)...' && node server/index.js",
+    "lint": "echo 'Linting all JavaScript/JSX files...' && eslint . --ext .js,.jsx --ignore-path .gitignore",
+    "lint:fix": "echo 'Fixing linting errors...' && eslint . --ext .js,.jsx --ignore-path .gitignore --fix",
+    "format": "echo 'Formatting all project files with Prettier...' && prettier --write \"**/*.{js,jsx,json,css,md}\"",
+    "test": "echo 'No root tests configured yet. Run tests in client/ and server/ directories.' && exit 0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.2.5"
+  }
+}
+```
